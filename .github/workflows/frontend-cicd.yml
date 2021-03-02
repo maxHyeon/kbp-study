@@ -23,7 +23,7 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     env:
-      working-directory: ./frontend
+      working-directory: ./journal/frontend
     steps:
       - name: scm
         
