@@ -16,7 +16,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: maxhyeon/journal-server:v1-abcde
+      - image: maxhyeon/k8s-study-frontend:latest
         imagePullPolicy: IfNotPresent
         name: frontend
         resources:

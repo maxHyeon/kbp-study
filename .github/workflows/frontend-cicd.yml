@@ -27,6 +27,7 @@ jobs:
     env:
       working-directory: ./journal/frontend
       docker_repo: ${{ secrets.DOCKER_USER }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+      docker_repo_latest: ${{ secrets.DOCKER_USER }}/${{ secrets.IMAGE_NAME }}:latest
     steps:
       - name: scm
         uses: actions/checkout@v2
@@ -42,7 +43,7 @@ jobs:
         with:
           context: ${{ env.working-directory }}
           push: true
-          tags: ${{ env.docker_repo }}
+          tags: ${{ env.docker_repo }},${{ env.docker_repo_latest }}
 
       # # Push the image to IBM Container Registry
       # - name: Push the image to ICR
